@@ -7,20 +7,35 @@
 
 import Foundation
 
-enum CategoryModel {
-  case pizza
-  case combo
-  case desserts
-  case beverages
+// if You need hardcore model you can use this
+
+/*
+
+ enum CategoryModel {
+ case pizza
+ case combo
+ case desserts
+ case beverages
 
 
-  var title: String {
-    switch self {
-    case .pizza: return "Пицца"
-    case .combo: return "Комбо"
-    case .desserts: return "Дисерты"
-    case .beverages: return "Напитки"
+ var title: String {
+ switch self {
+ case .pizza: return "Пицца"
+ case .combo: return "Комбо"
+ case .desserts: return "Дисерты"
+ case .beverages: return "Напитки"
+ }
+ }
+
+ }
+
+ */
+
+struct CategoryModel: Decodable {
+  let name: String
+
+  enum CodingKeys: String, CodingKey {
+    case name
     }
-  }
-
 }
+

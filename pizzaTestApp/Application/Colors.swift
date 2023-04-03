@@ -17,4 +17,5 @@ enum Colors {
   static let namePizzaColor = UIColor(hexString: "222831")
   static let descriptionPizzaColor = UIColor(hexString: "AAAAAD")
   static let separatorColor = UIColor(hexString: "F3F5F9")
+  static let topBackground = UIColor(hexString: "F3F5F9")
 }

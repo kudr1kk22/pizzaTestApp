@@ -27,10 +27,33 @@ final class NetworkService: NetworkServiceProtocol {
 
   //MARK: - Get Categories
 
+  // Code for hardcode model
+  
+  /*
+
   func getCategories(completion: @escaping (Result<[CategoryModel], Error>) -> Void) {
     let models = self.prepareCategoryModels()
     completion(.success(models))
   }
+
+   */
+
+  func getCategories(completion: @escaping (Result<[CategoryModel], Error>) -> Void) {
+    guard let path = Bundle.main.path(forResource: "JSON", ofType: "json") else {
+      print("File not found")
+      return
+    }
+    let url = URL(fileURLWithPath: path)
+    do {
+      let data = try Data(contentsOf: url)
+      let decoder = JSONDecoder()
+      let result = try decoder.decode([CategoryModel].self, from: data)
+      completion(.success(result))
+    } catch {
+      completion(.failure(error))
+    }
+  }
+
 
   //MARK: - Get pizza data
 
@@ -80,6 +103,10 @@ final class NetworkService: NetworkServiceProtocol {
     return models
   }
 
+
+  // This method for hardcode model
+  /*
+
   func prepareCategoryModels() -> [CategoryModel] {
       let models = [
         CategoryModel.pizza,
@@ -89,6 +116,9 @@ final class NetworkService: NetworkServiceProtocol {
       ]
       return models
     }
+
+   */
+
 }
 
 //MARK: - Create Request

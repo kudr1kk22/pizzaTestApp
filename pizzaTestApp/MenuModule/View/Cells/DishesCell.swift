@@ -66,6 +66,7 @@ final class DishesCell: UICollectionViewCell {
 
   private func configureUI() {
       [imageView, nameLabel, descriptionLabel, separatorView].forEach { contentView.addSubview($0) }
+    self.backgroundColor = .white
   }
 
   func configureCell(model: DishesModel) {
@@ -83,7 +84,7 @@ extension DishesCell {
   private func setConstraints() {
     NSLayoutConstraint.activate([
       imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24.0),
-      imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0),
       imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24.0),
       imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
     ])
@@ -100,7 +101,7 @@ extension DishesCell {
     NSLayoutConstraint.activate([
       descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8.0),
       descriptionLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-      descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+      descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0)
     ])
 
     NSLayoutConstraint.activate([

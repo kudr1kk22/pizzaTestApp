@@ -26,7 +26,6 @@ final class MenuViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
-
   //MARK: - Life Cycle
 
   override func viewDidLoad() {
@@ -41,7 +40,6 @@ final class MenuViewController: UIViewController {
       view.backgroundColor = .systemBackground
       view.addSubview(collectionView)
   }
-
 }
 
 //MARK: - MenuViewProtocol
@@ -58,12 +56,14 @@ extension MenuViewController: MenuViewProtocol {
 
 }
 
+
+
 //MARK: - Navigation Bar
 
 extension MenuViewController {
   private func setNavigationItem() {
     makeLeftBarButtonItem()
-    navigationController?.navigationBar.barTintColor = .white
+    navigationController?.navigationBar.barTintColor = Colors.topBackground
     navigationController?.navigationBar.shadowImage = UIImage()
   }
 
@@ -89,9 +89,8 @@ extension MenuViewController {
       return self.createSectionLayout(section: sectionIndex)
     }
 
-
     collectionView.dataSource = self
-    collectionView.backgroundColor = .white
+    collectionView.backgroundColor = Colors.topBackground
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     collectionView.collectionViewLayout = layout
 
@@ -99,8 +98,8 @@ extension MenuViewController {
 
     collectionView.register(DishesCell.self, forCellWithReuseIdentifier: "\(DishesCell.self)")
 
-    collectionView.register(CategoriesCell.self,
-                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(CategoriesCell.self)")
+    collectionView.register(CategoriesCollectionView.self,
+                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(CategoriesCollectionView.self)")
   }
 }
 
@@ -141,10 +140,7 @@ extension MenuViewController: UICollectionViewDataSource {
       cell.configureCell(model: dishes)
 
       return cell
-
     }
-
-
   }
 
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -152,18 +148,11 @@ extension MenuViewController: UICollectionViewDataSource {
 
     guard kind == UICollectionView.elementKindSectionHeader && section == 1 else { return UICollectionReusableView() }
 
-          guard let categoryCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(CategoriesCell.self)", for: indexPath) as? CategoriesCell else { return UICollectionReusableView() }
-          if let model = presenter.categoriesModel?[indexPath.row] {
-              categoryCell.configureCell(model: model)
-          }
-          return categoryCell
+    let cell = ModelBuilder.createCollectionViewCellModule(for: indexPath, in: collectionView, kind: kind)
+    
+        return cell
       }
-
   }
-
-
-
-
 
 //MARK: - Constraints
 
@@ -182,17 +171,17 @@ extension MenuViewController {
 
 extension MenuViewController {
 
-   func createSectionLayout(section: Int) -> NSCollectionLayoutSection {
-    let supplementaryViews = [
-      NSCollectionLayoutBoundarySupplementaryItem(
-        layoutSize: NSCollectionLayoutSize(
-          widthDimension: .fractionalWidth(1),
-          heightDimension: .absolute(50.0)
-        ),
-        elementKind: UICollectionView.elementKindSectionHeader,
-        alignment: .top
-      )
-    ]
+  func createSectionLayout(section: Int) -> NSCollectionLayoutSection {
+    let item = NSCollectionLayoutBoundarySupplementaryItem(
+      layoutSize: NSCollectionLayoutSize(
+        widthDimension: .fractionalWidth(1),
+        heightDimension: .absolute(80.0)
+      ),
+      elementKind: UICollectionView.elementKindSectionHeader,
+      alignment: .top
+    )
+    item.pinToVisibleBounds = true
+    let supplementaryViews = [item]
 
     switch section {
     case 0:
@@ -239,11 +228,9 @@ extension MenuViewController {
         count: 1
       )
 
-      verticalGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
-
       // Section
       let section = NSCollectionLayoutSection(group: verticalGroup)
-      section.contentInsets = NSDirectionalEdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 16)
+      section.contentInsets = NSDirectionalEdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0)
       section.boundarySupplementaryItems = supplementaryViews
 
       return section

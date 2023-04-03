@@ -61,7 +61,7 @@ final class CategoriesCell: UICollectionViewCell {
   }
 
   func configureCell(model: CategoryModel) {
-    categoryLabel.text = model.title
+    categoryLabel.text = model.name
   }
 
   
@@ -73,10 +73,10 @@ final class CategoriesCell: UICollectionViewCell {
 extension CategoriesCell {
   private func setContstraints() {
     NSLayoutConstraint.activate([
-      categoryLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
       categoryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       categoryLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      categoryLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+      categoryLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+      categoryLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
     ])
   }
 }
