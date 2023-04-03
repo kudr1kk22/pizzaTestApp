@@ -3,27 +3,73 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B97269F78BEA2A85187DDF9 /* Pods_pizzaTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73FC9224701FA75332469CD /* Pods_pizzaTestApp.framework */; };
 		D9C00C9D29DA1BB600BEEE72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00C9C29DA1BB600BEEE72 /* AppDelegate.swift */; };
 		D9C00C9F29DA1BB600BEEE72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00C9E29DA1BB600BEEE72 /* SceneDelegate.swift */; };
-		D9C00CA129DA1BB600BEEE72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CA029DA1BB600BEEE72 /* ViewController.swift */; };
-		D9C00CA429DA1BB600BEEE72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C00CA229DA1BB600BEEE72 /* Main.storyboard */; };
+		D9C00CA129DA1BB600BEEE72 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CA029DA1BB600BEEE72 /* TabBarViewController.swift */; };
 		D9C00CA629DA1BBA00BEEE72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C00CA529DA1BBA00BEEE72 /* Assets.xcassets */; };
 		D9C00CA929DA1BBA00BEEE72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C00CA729DA1BBA00BEEE72 /* LaunchScreen.storyboard */; };
+		D9C00CB229DA241900BEEE72 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CB129DA241900BEEE72 /* MenuViewController.swift */; };
+		D9C00CB429DA26F100BEEE72 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CB329DA26F100BEEE72 /* Colors.swift */; };
+		D9C00CB629DA272100BEEE72 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CB529DA272100BEEE72 /* UIColor+Hex.swift */; };
+		D9C00CB929DA29F900BEEE72 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CB829DA29F900BEEE72 /* BannerCell.swift */; };
+		D9C00CBB29DA2CB900BEEE72 /* UIView+MakeRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CBA29DA2CB900BEEE72 /* UIView+MakeRounded.swift */; };
+		D9C00CBD29DA35B500BEEE72 /* SFUIDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9C00CBC29DA35B500BEEE72 /* SFUIDisplay-Medium.otf */; };
+		D9C00CC029DA365600BEEE72 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CBF29DA365600BEEE72 /* Fonts.swift */; };
+		D9C00CC229DA396200BEEE72 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C00CC129DA396200BEEE72 /* NetworkService.swift */; };
+		D9DAC01C29DA48AD003B2B9B /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC01B29DA48AD003B2B9B /* BannerModel.swift */; };
+		D9DAC02129DACC00003B2B9B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02029DACC00003B2B9B /* NetworkServiceProtocol.swift */; };
+		D9DAC02429DACD42003B2B9B /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02329DACD42003B2B9B /* MenuPresenter.swift */; };
+		D9DAC02729DAD3F6003B2B9B /* ModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02629DAD3F6003B2B9B /* ModelBuilder.swift */; };
+		D9DAC02929DAE049003B2B9B /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02829DAE049003B2B9B /* CategoriesCell.swift */; };
+		D9DAC02B29DAE497003B2B9B /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02A29DAE497003B2B9B /* CategoryModel.swift */; };
+		D9DAC02D29DAE70C003B2B9B /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02C29DAE70C003B2B9B /* SectionType.swift */; };
+		D9DAC02F29DAEA29003B2B9B /* SFUIDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9DAC02E29DAEA28003B2B9B /* SFUIDisplay-Bold.otf */; };
+		D9DAC03329DAF8D6003B2B9B /* SFUIDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9DAC03229DAF8D6003B2B9B /* SFUIDisplay-Regular.ttf */; };
+		D9DAC03529DB045E003B2B9B /* DishesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC03429DB045E003B2B9B /* DishesModel.swift */; };
+		D9DAC03729DB0F1B003B2B9B /* DishesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC03629DB0F1B003B2B9B /* DishesCell.swift */; };
+		D9DAC03929DB1069003B2B9B /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC03829DB1069003B2B9B /* EndPointType.swift */; };
+		D9DAC03B29DB1984003B2B9B /* SFUIDisplay-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9DAC03A29DB1984003B2B9B /* SFUIDisplay-SemiBold.otf */; };
+		D9DAC04329DB2F38003B2B9B /* JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DAC04229DB2F38003B2B9B /* JSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EF9FCDA57A5B73B607A5935 /* Pods-pizzaTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pizzaTestApp.release.xcconfig"; path = "Target Support Files/Pods-pizzaTestApp/Pods-pizzaTestApp.release.xcconfig"; sourceTree = "<group>"; };
+		411A19B277BE55D00A829547 /* Pods-pizzaTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pizzaTestApp.debug.xcconfig"; path = "Target Support Files/Pods-pizzaTestApp/Pods-pizzaTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D9C00C9929DA1BB600BEEE72 /* pizzaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pizzaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C00C9C29DA1BB600BEEE72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C00C9E29DA1BB600BEEE72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D9C00CA029DA1BB600BEEE72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D9C00CA329DA1BB600BEEE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D9C00CA029DA1BB600BEEE72 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D9C00CA529DA1BBA00BEEE72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9C00CA829DA1BBA00BEEE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9C00CAA29DA1BBA00BEEE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9C00CB129DA241900BEEE72 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D9C00CB329DA26F100BEEE72 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D9C00CB529DA272100BEEE72 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		D9C00CB829DA29F900BEEE72 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		D9C00CBA29DA2CB900BEEE72 /* UIView+MakeRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MakeRounded.swift"; sourceTree = "<group>"; };
+		D9C00CBC29DA35B500BEEE72 /* SFUIDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Medium.otf"; sourceTree = "<group>"; };
+		D9C00CBF29DA365600BEEE72 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		D9C00CC129DA396200BEEE72 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D9DAC01B29DA48AD003B2B9B /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		D9DAC02029DACC00003B2B9B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		D9DAC02329DACD42003B2B9B /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		D9DAC02629DAD3F6003B2B9B /* ModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBuilder.swift; sourceTree = "<group>"; };
+		D9DAC02829DAE049003B2B9B /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
+		D9DAC02A29DAE497003B2B9B /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		D9DAC02C29DAE70C003B2B9B /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
+		D9DAC02E29DAEA28003B2B9B /* SFUIDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Bold.otf"; sourceTree = "<group>"; };
+		D9DAC03229DAF8D6003B2B9B /* SFUIDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		D9DAC03429DB045E003B2B9B /* DishesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesModel.swift; sourceTree = "<group>"; };
+		D9DAC03629DB0F1B003B2B9B /* DishesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesCell.swift; sourceTree = "<group>"; };
+		D9DAC03829DB1069003B2B9B /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		D9DAC03A29DB1984003B2B9B /* SFUIDisplay-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-SemiBold.otf"; sourceTree = "<group>"; };
+		D9DAC04229DB2F38003B2B9B /* JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSON.json; sourceTree = "<group>"; };
+		E73FC9224701FA75332469CD /* Pods_pizzaTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pizzaTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +77,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B97269F78BEA2A85187DDF9 /* Pods_pizzaTestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F9CDB4B1998EE0BFA653E73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E73FC9224701FA75332469CD /* Pods_pizzaTestApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1100B3B19FC1D3143210171 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				411A19B277BE55D00A829547 /* Pods-pizzaTestApp.debug.xcconfig */,
+				2EF9FCDA57A5B73B607A5935 /* Pods-pizzaTestApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D9C00C9029DA1BB600BEEE72 = {
 			isa = PBXGroup;
 			children = (
 				D9C00C9B29DA1BB600BEEE72 /* pizzaTestApp */,
 				D9C00C9A29DA1BB600BEEE72 /* Products */,
+				A1100B3B19FC1D3143210171 /* Pods */,
+				2F9CDB4B1998EE0BFA653E73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +122,125 @@
 		D9C00C9B29DA1BB600BEEE72 /* pizzaTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				D9C00C9C29DA1BB600BEEE72 /* AppDelegate.swift */,
-				D9C00C9E29DA1BB600BEEE72 /* SceneDelegate.swift */,
-				D9C00CA029DA1BB600BEEE72 /* ViewController.swift */,
-				D9C00CA229DA1BB600BEEE72 /* Main.storyboard */,
-				D9C00CA529DA1BBA00BEEE72 /* Assets.xcassets */,
-				D9C00CA729DA1BBA00BEEE72 /* LaunchScreen.storyboard */,
+				D9C00CB029DA21D400BEEE72 /* Application */,
+				D9C00CA029DA1BB600BEEE72 /* TabBarViewController.swift */,
+				D9DAC02629DAD3F6003B2B9B /* ModelBuilder.swift */,
+				D9DAC01F29DA4E87003B2B9B /* Services */,
+				D9C00CC829DA486000BEEE72 /* MenuModule */,
 				D9C00CAA29DA1BBA00BEEE72 /* Info.plist */,
 			);
 			path = pizzaTestApp;
+			sourceTree = "<group>";
+		};
+		D9C00CB029DA21D400BEEE72 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D9C00CBE29DA35C800BEEE72 /* Fonts */,
+				D9C00CA729DA1BBA00BEEE72 /* LaunchScreen.storyboard */,
+				D9C00CA529DA1BBA00BEEE72 /* Assets.xcassets */,
+				D9C00C9C29DA1BB600BEEE72 /* AppDelegate.swift */,
+				D9C00C9E29DA1BB600BEEE72 /* SceneDelegate.swift */,
+				D9C00CB329DA26F100BEEE72 /* Colors.swift */,
+				D9C00CBF29DA365600BEEE72 /* Fonts.swift */,
+				D9C00CB729DA28FF00BEEE72 /* GlobalExtensions */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D9C00CB729DA28FF00BEEE72 /* GlobalExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9C00CBA29DA2CB900BEEE72 /* UIView+MakeRounded.swift */,
+				D9C00CB529DA272100BEEE72 /* UIColor+Hex.swift */,
+			);
+			path = GlobalExtensions;
+			sourceTree = "<group>";
+		};
+		D9C00CBE29DA35C800BEEE72 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D9C00CBC29DA35B500BEEE72 /* SFUIDisplay-Medium.otf */,
+				D9DAC03A29DB1984003B2B9B /* SFUIDisplay-SemiBold.otf */,
+				D9DAC03229DAF8D6003B2B9B /* SFUIDisplay-Regular.ttf */,
+				D9DAC02E29DAEA28003B2B9B /* SFUIDisplay-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D9C00CC629DA484300BEEE72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9C00CB129DA241900BEEE72 /* MenuViewController.swift */,
+				D9C00CC729DA484E00BEEE72 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9C00CC729DA484E00BEEE72 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D9DAC03629DB0F1B003B2B9B /* DishesCell.swift */,
+				D9C00CB829DA29F900BEEE72 /* BannerCell.swift */,
+				D9DAC02829DAE049003B2B9B /* CategoriesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D9C00CC829DA486000BEEE72 /* MenuModule */ = {
+			isa = PBXGroup;
+			children = (
+				D9DAC01D29DA48B3003B2B9B /* Model */,
+				D9C00CC629DA484300BEEE72 /* View */,
+				D9DAC02529DACD49003B2B9B /* Presenter */,
+			);
+			path = MenuModule;
+			sourceTree = "<group>";
+		};
+		D9DAC01D29DA48B3003B2B9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9DAC01B29DA48AD003B2B9B /* BannerModel.swift */,
+				D9DAC02A29DAE497003B2B9B /* CategoryModel.swift */,
+				D9DAC03429DB045E003B2B9B /* DishesModel.swift */,
+			);
+			name = Model;
+			path = ../../Model;
+			sourceTree = "<group>";
+		};
+		D9DAC01E29DA4E7D003B2B9B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D9C00CC129DA396200BEEE72 /* NetworkService.swift */,
+				D9DAC04229DB2F38003B2B9B /* JSON.json */,
+				D9DAC03829DB1069003B2B9B /* EndPointType.swift */,
+				D9DAC02229DACC04003B2B9B /* Protocols */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D9DAC01F29DA4E87003B2B9B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D9DAC01E29DA4E7D003B2B9B /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D9DAC02229DACC04003B2B9B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D9DAC02029DACC00003B2B9B /* NetworkServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D9DAC02529DACD49003B2B9B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D9DAC02329DACD42003B2B9B /* MenuPresenter.swift */,
+				D9DAC02C29DAE70C003B2B9B /* SectionType.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +250,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9C00CAD29DA1BBA00BEEE72 /* Build configuration list for PBXNativeTarget "pizzaTestApp" */;
 			buildPhases = (
+				348D083E7E6B7A31A9DE665B /* [CP] Check Pods Manifest.lock */,
 				D9C00C9529DA1BB600BEEE72 /* Sources */,
 				D9C00C9629DA1BB600BEEE72 /* Frameworks */,
 				D9C00C9729DA1BB600BEEE72 /* Resources */,
+				83CBB32A54B0466EED5EFC85 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,7 +281,7 @@
 				};
 			};
 			buildConfigurationList = D9C00C9429DA1BB600BEEE72 /* Build configuration list for PBXProject "pizzaTestApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -126,35 +304,90 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9C00CA929DA1BBA00BEEE72 /* LaunchScreen.storyboard in Resources */,
+				D9DAC03B29DB1984003B2B9B /* SFUIDisplay-SemiBold.otf in Resources */,
+				D9C00CBD29DA35B500BEEE72 /* SFUIDisplay-Medium.otf in Resources */,
+				D9DAC03329DAF8D6003B2B9B /* SFUIDisplay-Regular.ttf in Resources */,
 				D9C00CA629DA1BBA00BEEE72 /* Assets.xcassets in Resources */,
-				D9C00CA429DA1BB600BEEE72 /* Main.storyboard in Resources */,
+				D9DAC02F29DAEA29003B2B9B /* SFUIDisplay-Bold.otf in Resources */,
+				D9DAC04329DB2F38003B2B9B /* JSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		348D083E7E6B7A31A9DE665B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pizzaTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83CBB32A54B0466EED5EFC85 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pizzaTestApp/Pods-pizzaTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pizzaTestApp/Pods-pizzaTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pizzaTestApp/Pods-pizzaTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D9C00C9529DA1BB600BEEE72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C00CA129DA1BB600BEEE72 /* ViewController.swift in Sources */,
+				D9DAC02929DAE049003B2B9B /* CategoriesCell.swift in Sources */,
+				D9C00CC229DA396200BEEE72 /* NetworkService.swift in Sources */,
+				D9C00CB929DA29F900BEEE72 /* BannerCell.swift in Sources */,
+				D9DAC03529DB045E003B2B9B /* DishesModel.swift in Sources */,
+				D9DAC02D29DAE70C003B2B9B /* SectionType.swift in Sources */,
+				D9C00CA129DA1BB600BEEE72 /* TabBarViewController.swift in Sources */,
+				D9DAC02729DAD3F6003B2B9B /* ModelBuilder.swift in Sources */,
+				D9DAC03729DB0F1B003B2B9B /* DishesCell.swift in Sources */,
+				D9DAC03929DB1069003B2B9B /* EndPointType.swift in Sources */,
+				D9C00CB429DA26F100BEEE72 /* Colors.swift in Sources */,
 				D9C00C9D29DA1BB600BEEE72 /* AppDelegate.swift in Sources */,
+				D9C00CB629DA272100BEEE72 /* UIColor+Hex.swift in Sources */,
 				D9C00C9F29DA1BB600BEEE72 /* SceneDelegate.swift in Sources */,
+				D9DAC01C29DA48AD003B2B9B /* BannerModel.swift in Sources */,
+				D9DAC02129DACC00003B2B9B /* NetworkServiceProtocol.swift in Sources */,
+				D9C00CBB29DA2CB900BEEE72 /* UIView+MakeRounded.swift in Sources */,
+				D9C00CC029DA365600BEEE72 /* Fonts.swift in Sources */,
+				D9DAC02B29DAE497003B2B9B /* CategoryModel.swift in Sources */,
+				D9DAC02429DACD42003B2B9B /* MenuPresenter.swift in Sources */,
+				D9C00CB229DA241900BEEE72 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D9C00CA229DA1BB600BEEE72 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9C00CA329DA1BB600BEEE72 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D9C00CA729DA1BBA00BEEE72 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +515,7 @@
 		};
 		D9C00CAE29DA1BBA00BEEE72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 411A19B277BE55D00A829547 /* Pods-pizzaTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,9 +526,9 @@
 				INFOPLIST_FILE = pizzaTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +544,7 @@
 		};
 		D9C00CAF29DA1BBA00BEEE72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EF9FCDA57A5B73B607A5935 /* Pods-pizzaTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,9 +555,9 @@
 				INFOPLIST_FILE = pizzaTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
