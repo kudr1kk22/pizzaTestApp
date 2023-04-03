@@ -36,6 +36,17 @@ final class DishesCell: UICollectionViewCell {
     return label
   }()
 
+  private let priceButton: UIButton = {
+    let button = UIButton()
+    button.titleLabel?.font = UIFont(name: Fonts.mainFontRegular, size: 13.0)
+    button.setTitleColor(Colors.categoryText, for: .normal)
+    button.makeRounded(radius: 6.0)
+    button.layer.borderColor = Colors.categoryText.cgColor
+    button.layer.borderWidth = 1.0
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
+
   private let separatorView: UIView = {
      let view = UIView()
      view.backgroundColor = Colors.separatorColor
@@ -65,11 +76,12 @@ final class DishesCell: UICollectionViewCell {
   //MARK: - Configure UI
 
   private func configureUI() {
-      [imageView, nameLabel, descriptionLabel, separatorView].forEach { contentView.addSubview($0) }
+      [imageView, nameLabel, descriptionLabel, separatorView, priceButton].forEach { contentView.addSubview($0) }
     self.backgroundColor = .white
   }
 
   func configureCell(model: DishesModel) {
+    priceButton.setTitle("от \(model.price) р", for: .normal)
     nameLabel.text = model.name
     descriptionLabel.text = model.description
     if let imageURL = URL(string: model.imageURL) {
@@ -103,6 +115,12 @@ extension DishesCell {
       descriptionLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
       descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0)
     ])
+
+    NSLayoutConstraint.activate([
+      priceButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 24.0),
+      priceButton.leadingAnchor.constraint(equalTo: nameLabel.centerXAnchor),
+      priceButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0)
+     ])
 
     NSLayoutConstraint.activate([
        separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),

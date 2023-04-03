@@ -137,6 +137,11 @@ extension MenuViewController: UICollectionViewDataSource {
     case .dishes(let models):
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(DishesCell.self)", for: indexPath) as? DishesCell else { return UICollectionViewCell() }
       let dishes = models[indexPath.row]
+      if indexPath.item == 0 {
+              let maskLayer = CAShapeLayer()
+              maskLayer.path = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 20, height: 20)).cgPath
+              cell.layer.mask = maskLayer
+          }
       cell.configureCell(model: dishes)
 
       return cell
