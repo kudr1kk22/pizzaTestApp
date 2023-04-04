@@ -48,11 +48,11 @@ final class DishesCell: UICollectionViewCell {
   }()
 
   private let separatorView: UIView = {
-     let view = UIView()
-     view.backgroundColor = Colors.separatorColor
-     view.translatesAutoresizingMaskIntoConstraints = false
-     return view
-   }()
+    let view = UIView()
+    view.backgroundColor = Colors.separatorColor
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
 
   //MARK: - Initialization
 
@@ -69,14 +69,14 @@ final class DishesCell: UICollectionViewCell {
   //MARK: - layoutSubviews
 
   override func layoutSubviews() {
-       super.layoutSubviews()
-       imageView.makeRounded()
-   }
+    super.layoutSubviews()
+    imageView.makeRounded()
+  }
 
   //MARK: - Configure UI
 
   private func configureUI() {
-      [imageView, nameLabel, descriptionLabel, separatorView, priceButton].forEach { contentView.addSubview($0) }
+    [imageView, nameLabel, descriptionLabel, separatorView, priceButton].forEach { contentView.addSubview($0) }
     self.backgroundColor = .white
   }
 
@@ -102,7 +102,6 @@ extension DishesCell {
     ])
 
     NSLayoutConstraint.activate([
-      
       nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 32.0),
       nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 32.0),
       nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -117,17 +116,17 @@ extension DishesCell {
     ])
 
     NSLayoutConstraint.activate([
-      priceButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 24.0),
+      priceButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24.0),
       priceButton.leadingAnchor.constraint(equalTo: nameLabel.centerXAnchor),
       priceButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0)
-     ])
+    ])
 
     NSLayoutConstraint.activate([
-       separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
-       separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
-       separatorView.bottomAnchor.constraint(equalTo: bottomAnchor),
-       separatorView.heightAnchor.constraint(equalToConstant: 1)
-     ])
+      separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      separatorView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      separatorView.heightAnchor.constraint(equalToConstant: 1)
+    ])
 
   }
 }

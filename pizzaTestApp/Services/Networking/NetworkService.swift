@@ -31,10 +31,10 @@ final class NetworkService: NetworkServiceProtocol {
   
   /*
 
-  func getCategories(completion: @escaping (Result<[CategoryModel], Error>) -> Void) {
-    let models = self.prepareCategoryModels()
-    completion(.success(models))
-  }
+   func getCategories(completion: @escaping (Result<[CategoryModel], Error>) -> Void) {
+   let models = self.prepareCategoryModels()
+   completion(.success(models))
+   }
 
    */
 
@@ -53,7 +53,6 @@ final class NetworkService: NetworkServiceProtocol {
       completion(.failure(error))
     }
   }
-
 
   //MARK: - Get pizza data
 
@@ -103,19 +102,18 @@ final class NetworkService: NetworkServiceProtocol {
     return models
   }
 
-
   // This method for hardcode model
   /*
 
-  func prepareCategoryModels() -> [CategoryModel] {
-      let models = [
-        CategoryModel.pizza,
-        CategoryModel.combo,
-        CategoryModel.desserts,
-        CategoryModel.beverages
-      ]
-      return models
-    }
+   func prepareCategoryModels() -> [CategoryModel] {
+   let models = [
+   CategoryModel.pizza,
+   CategoryModel.combo,
+   CategoryModel.desserts,
+   CategoryModel.beverages
+   ]
+   return models
+   }
 
    */
 
@@ -125,13 +123,13 @@ final class NetworkService: NetworkServiceProtocol {
 
 extension NetworkService {
   private func createRequest(with url: URL?, type: HTTPMethod, headers: [String: String], completion: @escaping (URLRequest) -> Void) {
-          guard let apiURL = url else { return }
-          var request = URLRequest(url: apiURL)
-          request.httpMethod = type.rawValue
-          request.allHTTPHeaderFields = headers
-          request.timeoutInterval = 30
-          completion(request)
-      }
+    guard let apiURL = url else { return }
+    var request = URLRequest(url: apiURL)
+    request.httpMethod = type.rawValue
+    request.allHTTPHeaderFields = headers
+    request.timeoutInterval = 30
+    completion(request)
+  }
 }
 
 

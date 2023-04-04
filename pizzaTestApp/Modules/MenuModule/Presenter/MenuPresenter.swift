@@ -8,20 +8,6 @@
 import Foundation
 
 
-protocol MenuViewProtocol: AnyObject {
-  func success()
-  func failure(error: Error)
-}
-
-protocol MenuViewPresenterProtocol: AnyObject {
-  init(view: MenuViewProtocol, networkService: NetworkServiceProtocol)
-  func fetchData()
-  var bannersModel: [BannerModel]? { get }
-  var categoriesModel: [CategoryModel]? { get }
-  var dishesModel: [DishesModel]? { get }
-  var sections: [SectionType] { get set }
-}
-
 final class MenuPresenter: MenuViewPresenterProtocol {
 
   var bannersModel: [BannerModel]?

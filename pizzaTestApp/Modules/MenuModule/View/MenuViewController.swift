@@ -37,8 +37,8 @@ final class MenuViewController: UIViewController {
   }
 
   private func configureUI(){
-      view.backgroundColor = .systemBackground
-      view.addSubview(collectionView)
+    view.backgroundColor = .systemBackground
+    view.addSubview(collectionView)
   }
 }
 
@@ -76,7 +76,7 @@ extension MenuViewController {
     button.semanticContentAttribute = .forceRightToLeft
     button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
     navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
-    }
+  }
 
 }
 
@@ -138,10 +138,11 @@ extension MenuViewController: UICollectionViewDataSource {
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(DishesCell.self)", for: indexPath) as? DishesCell else { return UICollectionViewCell() }
       let dishes = models[indexPath.row]
       if indexPath.item == 0 {
-              let maskLayer = CAShapeLayer()
-              maskLayer.path = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 20, height: 20)).cgPath
-              cell.layer.mask = maskLayer
-          }
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 20, height: 20)).cgPath
+        cell.layer.mask = maskLayer
+      }
+      
       cell.configureCell(model: dishes)
 
       return cell
@@ -149,25 +150,25 @@ extension MenuViewController: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-      let section = indexPath.section
+    let section = indexPath.section
 
     guard kind == UICollectionView.elementKindSectionHeader && section == 1 else { return UICollectionReusableView() }
 
     let cell = ModelBuilder.createCollectionViewCellModule(for: indexPath, in: collectionView, kind: kind)
     
-        return cell
-      }
+    return cell
   }
+}
 
 //MARK: - Constraints
 
 extension MenuViewController {
   private func setConstraints() {
     NSLayoutConstraint.activate([
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+      collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+      collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
   }
 }
@@ -207,7 +208,7 @@ extension MenuViewController {
         count: 1
       )
 
-        horizontalGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
+      horizontalGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
 
       // Section
       let section = NSCollectionLayoutSection(group: horizontalGroup)
@@ -235,7 +236,6 @@ extension MenuViewController {
 
       // Section
       let section = NSCollectionLayoutSection(group: verticalGroup)
-      section.contentInsets = NSDirectionalEdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0)
       section.boundarySupplementaryItems = supplementaryViews
 
       return section
@@ -284,7 +284,7 @@ extension MenuViewController {
         count: 1)
 
       let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
+      section.orthogonalScrollingBehavior = .continuous
 
       section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0)
       return section

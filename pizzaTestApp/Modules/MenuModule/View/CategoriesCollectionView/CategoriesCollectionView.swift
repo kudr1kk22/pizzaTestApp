@@ -49,6 +49,7 @@ extension CategoriesCollectionView {
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.backgroundColor = Colors.topBackground
+    collectionView.allowsMultipleSelection = false
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     collectionView.collectionViewLayout = layout
 
@@ -67,8 +68,11 @@ extension CategoriesCollectionView: UICollectionViewDataSource {
 
     if let category = presenter.categoriesModel?[indexPath.row] {
       cell.configureCell(model: category)
-      if indexPath.row == 0 {
-        cell.isSelected = true
+      if presenter.selectedIndex == indexPath.row
+      {
+        cell.configureSelectedAppearance()
+      } else {
+        cell.configureStandartAppearance()
       }
       return cell
     } else {
@@ -76,12 +80,14 @@ extension CategoriesCollectionView: UICollectionViewDataSource {
     }
 
   }
+
+
 }
 
 extension CategoriesCollectionView: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         let index = indexPath.item
-         
+    presenter.selectedIndex = indexPath.row
+    collectionView.reloadData()
      }
 }
 

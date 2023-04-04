@@ -16,12 +16,13 @@ protocol CategoriesViewPresenterProtocol: AnyObject {
   init(view: CategoriesViewProtocol, networkService: NetworkServiceProtocol)
   func fetchData()
   var categoriesModel: [CategoryModel]? { get }
+  var selectedIndex: Int { get set }
 }
 
 final class CategoriesPresenter: CategoriesViewPresenterProtocol {
 
   var categoriesModel: [CategoryModel]?
-
+  var selectedIndex = Int()
   weak var view: CategoriesViewProtocol?
   private let networkService: NetworkServiceProtocol
 
