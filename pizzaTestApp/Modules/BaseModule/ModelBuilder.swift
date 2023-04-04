@@ -18,6 +18,13 @@ final class ModelBuilder: Builder {
     return view
   }
 
+  static func createTabBar() -> UITabBarController {
+      let view = TabBarViewController()
+      let presenter = TabBarPresenter(view: view)
+      view.presenter = presenter
+      return view
+  }
+
   static func createCollectionViewCellModule(for indexPath: IndexPath, in collectionView: UICollectionView, kind: String) -> UICollectionReusableView {
     guard let categoryCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(CategoriesCollectionView.self)", for: indexPath) as? CategoriesCollectionView else { return UICollectionReusableView() }
 

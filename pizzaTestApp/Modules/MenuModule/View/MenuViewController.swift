@@ -14,6 +14,7 @@ final class MenuViewController: UIViewController {
   private var collectionView: UICollectionView = UICollectionView(
     frame: .zero,
     collectionViewLayout: UICollectionViewLayout())
+
   var presenter: MenuViewPresenterProtocol!
 
   //MARK: - Initialization
@@ -52,11 +53,16 @@ extension MenuViewController: MenuViewProtocol {
   func failure(error: Error) {
     print(error.localizedDescription)
   }
-
-
 }
 
+//MARK: - Scroll delegate
 
+extension MenuViewController: ScrollDelegate {
+  func didSelectCategory(_ index: Int) {
+    let indexPath = IndexPath(item: index, section: 1)
+    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+  }
+}
 
 //MARK: - Navigation Bar
 
@@ -154,7 +160,8 @@ extension MenuViewController: UICollectionViewDataSource {
 
     guard kind == UICollectionView.elementKindSectionHeader && section == 1 else { return UICollectionReusableView() }
 
-    let cell = ModelBuilder.createCollectionViewCellModule(for: indexPath, in: collectionView, kind: kind)
+    let cell = ModelBuilder.createCollectionViewCellModule(for: indexPath, in: collectionView, kind: kind) as! CategoriesCollectionView
+    cell.delegate = self
     
     return cell
   }

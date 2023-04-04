@@ -27,6 +27,10 @@
 		D9D16FF029DC1CB8007013B8 /* DishesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D16FED29DC1CB8007013B8 /* DishesModel.swift */; };
 		D9D16FF129DC1CB8007013B8 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D16FEE29DC1CB8007013B8 /* BannerModel.swift */; };
 		D9D16FF229DC1CB8007013B8 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D16FEF29DC1CB8007013B8 /* CategoryModel.swift */; };
+		D9D16FF529DC4E48007013B8 /* TabBarItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D16FF429DC4E48007013B8 /* TabBarItemModel.swift */; };
+		D9D16FF729DC4EDD007013B8 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D16FF629DC4EDD007013B8 /* TabBarPresenter.swift */; };
+		D9D16FFC29DC52B0007013B8 /* TabBarViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D16FFB29DC52B0007013B8 /* TabBarViewProtocol.swift */; };
+		D9D16FFE29DC52D2007013B8 /* TabBarPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D16FFD29DC52D2007013B8 /* TabBarPresenterProtocol.swift */; };
 		D9DAC02129DACC00003B2B9B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02029DACC00003B2B9B /* NetworkServiceProtocol.swift */; };
 		D9DAC02429DACD42003B2B9B /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02329DACD42003B2B9B /* MenuPresenter.swift */; };
 		D9DAC02729DAD3F6003B2B9B /* ModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC02629DAD3F6003B2B9B /* ModelBuilder.swift */; };
@@ -66,6 +70,10 @@
 		D9D16FED29DC1CB8007013B8 /* DishesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishesModel.swift; path = pizzaTestApp/Modules/MenuModule/Model/DishesModel.swift; sourceTree = SOURCE_ROOT; };
 		D9D16FEE29DC1CB8007013B8 /* BannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerModel.swift; path = pizzaTestApp/Modules/MenuModule/Model/BannerModel.swift; sourceTree = SOURCE_ROOT; };
 		D9D16FEF29DC1CB8007013B8 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryModel.swift; path = pizzaTestApp/Modules/MenuModule/Model/CategoryModel.swift; sourceTree = SOURCE_ROOT; };
+		D9D16FF429DC4E48007013B8 /* TabBarItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemModel.swift; sourceTree = "<group>"; };
+		D9D16FF629DC4EDD007013B8 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		D9D16FFB29DC52B0007013B8 /* TabBarViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewProtocol.swift; sourceTree = "<group>"; };
+		D9D16FFD29DC52D2007013B8 /* TabBarPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenterProtocol.swift; sourceTree = "<group>"; };
 		D9DAC02029DACC00003B2B9B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		D9DAC02329DACD42003B2B9B /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		D9DAC02629DAD3F6003B2B9B /* ModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBuilder.swift; sourceTree = "<group>"; };
@@ -125,7 +133,9 @@
 			children = (
 				D9DAC02629DAD3F6003B2B9B /* ModelBuilder.swift */,
 				D941C8E429DC1B7300BD570C /* BuilderProtocol.swift */,
-				D9C00CA029DA1BB600BEEE72 /* TabBarViewController.swift */,
+				D9D16FF829DC5288007013B8 /* View */,
+				D9D16FFA29DC5298007013B8 /* Presenter */,
+				D9D16FF929DC5290007013B8 /* Model */,
 			);
 			path = BaseModule;
 			sourceTree = "<group>";
@@ -230,6 +240,40 @@
 				D9DAC02529DACD49003B2B9B /* Presenter */,
 			);
 			path = MenuModule;
+			sourceTree = "<group>";
+		};
+		D9D16FF829DC5288007013B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9C00CA029DA1BB600BEEE72 /* TabBarViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9D16FF929DC5290007013B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9D16FF429DC4E48007013B8 /* TabBarItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9D16FFA29DC5298007013B8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D9D16FFF29DC52E0007013B8 /* Protocols */,
+				D9D16FF629DC4EDD007013B8 /* TabBarPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D9D16FFF29DC52E0007013B8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D9D16FFD29DC52D2007013B8 /* TabBarPresenterProtocol.swift */,
+				D9D16FFB29DC52B0007013B8 /* TabBarViewProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		D9DAC01D29DA48B3003B2B9B /* Model */ = {
@@ -427,18 +471,22 @@
 				D9DAC04929DB4D35003B2B9B /* CategoriesPresenter.swift in Sources */,
 				D9DAC02729DAD3F6003B2B9B /* ModelBuilder.swift in Sources */,
 				D9D16FF029DC1CB8007013B8 /* DishesModel.swift in Sources */,
+				D9D16FF529DC4E48007013B8 /* TabBarItemModel.swift in Sources */,
 				D9DAC03729DB0F1B003B2B9B /* DishesCell.swift in Sources */,
 				D941C8E529DC1B7300BD570C /* BuilderProtocol.swift in Sources */,
 				D9DAC03929DB1069003B2B9B /* EndPointType.swift in Sources */,
 				D9C00CB429DA26F100BEEE72 /* Colors.swift in Sources */,
 				D9DAC04529DB4799003B2B9B /* CategoriesCollectionView.swift in Sources */,
 				D9C00C9D29DA1BB600BEEE72 /* AppDelegate.swift in Sources */,
+				D9D16FF729DC4EDD007013B8 /* TabBarPresenter.swift in Sources */,
 				D9C00CB629DA272100BEEE72 /* UIColor+Hex.swift in Sources */,
 				D9C00C9F29DA1BB600BEEE72 /* SceneDelegate.swift in Sources */,
 				D9DAC02129DACC00003B2B9B /* NetworkServiceProtocol.swift in Sources */,
 				D9C00CBB29DA2CB900BEEE72 /* UIView+MakeRounded.swift in Sources */,
 				D9C00CC029DA365600BEEE72 /* Fonts.swift in Sources */,
 				D941C8E329DC1A2A00BD570C /* MenuViewPresenterProtocol.swift in Sources */,
+				D9D16FFC29DC52B0007013B8 /* TabBarViewProtocol.swift in Sources */,
+				D9D16FFE29DC52D2007013B8 /* TabBarPresenterProtocol.swift in Sources */,
 				D9D16FF229DC1CB8007013B8 /* CategoryModel.swift in Sources */,
 				D9DAC02429DACD42003B2B9B /* MenuPresenter.swift in Sources */,
 				D9C00CB229DA241900BEEE72 /* MenuViewController.swift in Sources */,

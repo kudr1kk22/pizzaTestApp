@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ScrollDelegate: AnyObject {
+    func didSelectCategory(_ index: Int)
+}
+
 final class CategoriesCollectionView: UICollectionReusableView {
 
   //MARK: - Properties
@@ -16,6 +20,7 @@ final class CategoriesCollectionView: UICollectionReusableView {
     collectionViewLayout: UICollectionViewLayout())
 
   var presenter: CategoriesViewPresenterProtocol!
+  weak var delegate: ScrollDelegate?
 
   //MARK: - Init
 
@@ -87,11 +92,10 @@ extension CategoriesCollectionView: UICollectionViewDataSource {
 extension CategoriesCollectionView: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     presenter.selectedIndex = indexPath.row
+    categoryTapped(index: presenter.selectedIndex)
     collectionView.reloadData()
      }
 }
-
-
 
 extension CategoriesCollectionView: CategoriesViewProtocol {
   func success() {
@@ -101,8 +105,14 @@ extension CategoriesCollectionView: CategoriesViewProtocol {
   func failure(error: Error) {
     print(error.localizedDescription)
   }
+}
 
-  
+//MARK: - Scroll delegate
+
+extension CategoriesCollectionView {
+  func categoryTapped(index: Int) {
+        delegate?.didSelectCategory(index)
+    }
 }
 
 //MARK: - Section Layout
